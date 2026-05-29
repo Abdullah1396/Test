@@ -161,7 +161,7 @@ description="أنت تميل إلى قراءة المعاني الخفية وا�
 
 container.innerHTML = "";
 
-document.getElementById("nextBtn").style.display="none";
+
 
 document.getElementById("result").innerHTML = <h1>${title}</h1> <p>${description}</p>;
 
