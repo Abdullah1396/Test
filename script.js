@@ -81,3 +81,123 @@ answers:[
 }
 
 ];
+
+let currentQuestion = 0;
+
+let scores = {
+builder:0,
+explorer:0,
+human:0,
+symbolic:0
+};
+
+const container =
+document.getElementById("question-container");
+
+function loadQuestion(){
+
+const q = questions[currentQuestion];
+
+container.innerHTML = `
+<img src="${q.image}" style="width:100%;border-radius:12px;margin-bottom:20px;">
+
+<h2>${q.question}</h2>
+
+<button class="choice" onclick="selectAnswer('${q.answers[0].type}')">
+${q.answers[0].text}
+</button>
+
+<button class="choice" onclick="selectAnswer('${q.answers[1].type}')">
+${q.answers[1].text}
+</button>
+
+<button class="choice" onclick="selectAnswer('${q.answers[2].type}')">
+${q.answers[2].text}
+</button>
+`;
+
+}
+
+function selectAnswer(type){
+
+scores[type]++;
+
+currentQuestion++;
+
+if(currentQuestion < questions.length){
+
+loadQuestion();
+
+}else{
+
+showResult();
+
+}
+
+}
+
+function showResult(){
+
+let winner = Object.keys(scores).reduce(
+(a,b)=>scores[a] > scores[b] ? a : b
+);
+
+let resultHTML = "";
+
+if(winner === "symbolic"){
+
+resultHTML = `
+<h1>النمط الرمزي</h1>
+
+<p>
+أنت ترى المعاني الخفية والرموز والعلاقات العميقة بين الأشياء.
+تميل إلى التأمل والتفسير أكثر من الملاحظة المباشرة.
+</p>
+`;
+
+}
+
+if(winner === "builder"){
+
+resultHTML = `
+<h1>النمط البنائي</h1>
+
+<p>
+تميل إلى رؤية البنية والمنطق والنظام.
+تركز على كيفية عمل الأشياء وترابطها العملي.
+</p>
+`;
+
+}
+
+if(winner === "explorer"){
+
+resultHTML = `
+<h1>النمط الاستكشافي</h1>
+
+<p>
+تميل لاكتشاف الاحتمالات والفرص والطرق الجديدة.
+عقلك يبحث دائماً عن المجهول والروابط غير المتوقعة.
+</p>
+`;
+
+}
+
+if(winner === "human"){
+
+resultHTML = `
+<h1>النمط الإنساني</h1>
+
+<p>
+تركز على الإنسان والمشاعر والتجارب الإنسانية.
+غالباً ترى الأشخاص قبل الأشياء.
+</p>
+`;
+
+}
+
+container.innerHTML = resultHTML;
+
+}
+
+loadQuestion();
