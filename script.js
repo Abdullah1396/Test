@@ -161,11 +161,111 @@ title="النمط الرمزي";
 desc="تميل لربط الأشياء بالمعاني العميقة والرموز والاستعارات أكثر من الواقع المباشر.";
 }
 
+function showResult(){
+
+container.innerHTML="";
+
+const winner = Object.keys(scores).reduce((a,b)=>
+scores[a] > scores[b] ? a : b
+);
+
+let title="";
+let desc="";
+
+if(winner==="builder"){
+title="النمط البنائي";
+desc="تميل إلى رؤية البنية والمنطق والنظام. تركز على كيفية عمل الأشياء وترابطها العملي.";
+}
+
+if(winner==="explorer"){
+title="النمط الاستكشافي";
+desc="تنجذب للمجهول والاحتمالات والطرق الجديدة. تبحث دائماً عما وراء الصورة الظاهرة.";
+}
+
+if(winner==="human"){
+title="النمط الإنساني";
+desc="ترى العلاقات البشرية والمشاعر والدوافع قبل التفاصيل الأخرى.";
+}
+
+if(winner==="symbolic"){
+title="النمط الرمزي";
+desc="تميل لربط الأشياء بالمعاني العميقة والرموز والاستعارات أكثر من الواقع المباشر.";
+}
+
 result.innerHTML = `
 <h2>${title}</h2>
+
 <p>${desc}</p>
+
+<br>
+
+<div style="display:flex;flex-direction:column;gap:12px;">
+
+<button onclick="shareResult()">
+📤 مشاركة النتيجة
+</button>
+
+<button onclick="shareWhatsApp()">
+🟢 مشاركة عبر واتساب
+</button>
+
+<button onclick="location.reload()">
+🔄 إعادة الاختبار
+</button>
+
+</div>
+
+<br><br>
+
+<h3>هل تريد اختباراً أعمق؟</h3>
+
+<p>
+• اختبار الذكاء المنطقي<br>
+• اختبار التفكير الرمزي<br>
+• اختبار الشخصية المعرفية<br>
+• اختبار أسلوب اتخاذ القرار<br>
+• اختبار الذكاءات المتعددة
+</p>
 `;
 
 }
 
+}
+
 loadQuestion();
+
+function shareResult() {
+
+const text =
+document.getElementById("result").innerText +
+"\n\nجرب الاختبار:\n" +
+window.location.href;
+
+if (navigator.share) {
+
+navigator.share({
+title: "اختبار نمط الإدراك المعرفي",
+text: text
+});
+
+} else {
+
+alert(text);
+
+}
+
+}
+
+function shareWhatsApp() {
+
+const text =
+document.getElementById("result").innerText +
+"\n\nجرب الاختبار:\n" +
+window.location.href;
+
+window.open(
+"https://wa.me/?text=" +
+encodeURIComponent(text)
+);
+
+}
