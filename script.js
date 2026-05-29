@@ -21,62 +21,44 @@ answers:[
 
 let currentQuestion = 0;
 
-let scores = {
-builder:0,
-explorer:0,
-human:0,
-symbolic:0
-};
-
-const container =
-document.getElementById("question-container");
-
 function loadQuestion(){
 
 const q = questions[currentQuestion];
 
-container.innerHTML = `
-<img src="${q.image}">
+document.getElementById("question-container").innerHTML =
+`
+<img src="${q.image}" style="width:100%">
 <h2>${q.question}</h2>
 
-${q.answers.map(answer=>`
-<div class="choice"
-onclick="selectAnswer('${answer.type}')">
-${answer.text}
-</div>
-`).join("")}
+<button onclick="answerQuestion(0)">
+${q.answers[0].text}
+</button>
+
+<button onclick="answerQuestion(1)">
+${q.answers[1].text}
+</button>
+
+<button onclick="answerQuestion(2)">
+${q.answers[2].text}
+</button>
 `;
 }
 
-function selectAnswer(type){
-
-scores[type]++;
+function answerQuestion(index){
 
 currentQuestion++;
 
 if(currentQuestion < questions.length){
+
 loadQuestion();
+
 }else{
-showResult();
-}
+
+document.getElementById("question-container").innerHTML =
+"<h1>نجح الاختبار</h1>";
 
 }
 
-function showResult(){
-
-let result = Object.keys(scores)
-.reduce((a,b)=>scores[a]>scores[b]?a:b);
-
-let title = "";
-
-if(result==="builder") title="النمط البنائي";
-if(result==="explorer") title="النمط الاستكشافي";
-if(result==="human") title="النمط الإنساني";
-if(result==="symbolic") title="النمط الرمزي";
-
-container.innerHTML = `
-<h1>${title}</h1>
-`;
 }
 
 loadQuestion();
