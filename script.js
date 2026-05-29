@@ -91,26 +91,39 @@ human:0,
 symbolic:0
 };
 
-const container =
-document.getElementById("question-container");
-
-const result =
-document.getElementById("result");
+const container = document.getElementById("question-container");
+const result = document.getElementById("result");
 
 function loadQuestion(){
 
 const q = questions[currentQuestion];
 
 const progress =
-((currentQuestion) /
-questions.length) * 100;
+(currentQuestion / questions.length) * 100;
 
-container.innerHTML =   <div class="progress"> <div class="progress-fill" style="width:${progress}%"> </div> </div>  <h3> السؤال ${currentQuestion + 1} من ${questions.length} </h3>  <img src="${q.image}">  <h2>${q.question}</h2>  ${q.answers.map(answer=>
+container.innerHTML = `
+<div class="progress">
+<div class="progress-fill"
+style="width:${progress}%"></div>
+</div>
+
+<h3>
+السؤال ${currentQuestion + 1}
+من
+${questions.length}
+</h3>
+
+<img src="${q.image}">
+
+<h2>${q.question}</h2>
+
+${q.answers.map(answer => `
 <div class="choice"
 onclick="selectAnswer('${answer.type}')">
 ${answer.text}
 </div>
-).join("")}  ;
+`).join("")}
+`;
 
 }
 
@@ -121,28 +134,24 @@ scores[type]++;
 currentQuestion++;
 
 if(currentQuestion < questions.length){
-
 loadQuestion();
-
 }else{
-
 showResult();
-
 }
 
 }
 
 function showResult(){
 
-container.innerHTML="";
+container.innerHTML = "";
 
 const winner =
 Object.keys(scores).reduce(
 (a,b)=>scores[a] > scores[b] ? a : b
 );
 
-let title="";
-let desc="";
+let title = "";
+let desc = "";
 
 if(winner==="builder"){
 title="🔧 النمط البنائي";
@@ -164,45 +173,86 @@ title="🜂 النمط الرمزي";
 desc="تميل لربط الأشياء بالمعاني العميقة والرموز والاستعارات أكثر من الواقع المباشر.";
 }
 
-const total =
-questions.length;
+const total = questions.length;
 
-const builderP =
-Math.round(scores.builder/total100);
+const builderP = Math.round((scores.builder / total) * 100);
+const explorerP = Math.round((scores.explorer / total) * 100);
+const humanP = Math.round((scores.human / total) * 100);
+const symbolicP = Math.round((scores.symbolic / total) * 100);
 
-const explorerP =
-Math.round(scores.explorer/total100);
+result.innerHTML = `
+<div class="result-card">
 
-const humanP =
-Math.round(scores.human/total100);
+<h1>${title}</h1>
 
-const symbolicP =
-Math.round(scores.symbolic/total100);
+<p>${desc}</p>
 
-result.innerHTML =  <div class="result-card">  <h1>${title}</h1>  <p>${desc}</p>  <hr>  <h3> تفاصيل النتيجة </h3>  <div class="score-row"> 🔧 البنائي ${builderP}% <div class="score-bar"> <div class="score-fill" style="width:${builderP}%"> </div> </div> </div>  <div class="score-row"> 🧭 الاستكشافي ${explorerP}% <div class="score-bar"> <div class="score-fill" style="width:${explorerP}%"> </div> </div> </div>  <div class="score-row"> ❤️ الإنساني ${humanP}% <div class="score-bar"> <div class="score-fill" style="width:${humanP}%"> </div> </div> </div>  <div class="score-row"> 🜂 الرمزي ${symbolicP}% <div class="score-bar"> <div class="score-fill" style="width:${symbolicP}%"> </div> </div> </div>  <hr>  <button onclick="shareResult()"> 📤 مشاركة النتيجة </button>  <button onclick="shareWhatsApp()"> 🟢 واتساب </button>  <button onclick="copyLink()"> 🔗 نسخ الرابط </button>  <button onclick="location.reload()"> 🔄 إعادة الاختبار </button>  <hr>  <h3> هل ترغب بمعرفة نفسك بشكل أعمق؟ </h3>  <p> • اختبار الشخصية MBTI<br> • اختبار الذكاءات المتعددة<br> • اختبار أسلوب التعلم<br> • اختبار اتخاذ القرار<br> • اختبار التفكير الرمزي </p>  </div> ;
+<hr>
 
-}
+<h3>ملفك المعرفي</h3>
 
-function shareResult(){
+<div class="score-row">
+🔧 البنائي ${builderP}%
+<div class="score-bar">
+<div class="score-fill" style="width:${builderP}%"></div>
+</div>
+</div>
 
-const text =
-document.getElementById("result").innerText;
+<div class="score-row">
+🧭 الاستكشافي ${explorerP}%
+<div class="score-bar">
+<div class="score-fill" style="width:${explorerP}%"></div>
+</div>
+</div>
 
-if(navigator.share){
+<div class="score-row">
+❤️ الإنساني ${humanP}%
+<div class="score-bar">
+<div class="score-fill" style="width:${humanP}%"></div>
+</div>
+</div>
 
-navigator.share({
-title:"اختبار نمط الإدراك المعرفي",
-text:text
-});
+<div class="score-row">
+🜂 الرمزي ${symbolicP}%
+<div class="score-bar">
+<div class="score-fill" style="width:${symbolicP}%"></div>
+</div>
+</div>
 
-}
+<hr>
+
+<button onclick="shareWhatsApp()">
+🟢 مشاركة عبر واتساب
+</button>
+
+<button onclick="copyLink()">
+🔗 نسخ الرابط
+</button>
+
+<button onclick="location.reload()">
+🔄 إعادة الاختبار
+</button>
+
+<hr>
+
+<p>
+هذه النتيجة تعكس الطريقة التي يميل بها عقلك
+إلى بناء المعنى والعلاقات بين الأشياء،
+وليست مقياساً للذكاء أو القدرات العقلية.
+</p>
+
+</div>
+`;
 
 }
 
 function shareWhatsApp(){
 
 const text =
-document.getElementById("result").innerText;
+"🧠 نتيجة اختبار نمط الإدراك المعرفي\n\n" +
+document.querySelector(".result-card h1").innerText +
+"\n\n" +
+window.location.href;
 
 window.open(
 "https://wa.me/?text=" +
@@ -218,6 +268,7 @@ window.location.href
 );
 
 alert("تم نسخ الرابط");
+
 }
 
 loadQuestion();
