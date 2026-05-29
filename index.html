@@ -1,114 +1,33 @@
-const questions = [
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اختبار نمط الإدراك المعرفي</title>
 
-{
-image:"q1.jpg",
-question:"أي رابط ظهر في ذهنك أولاً؟",
+<link rel="stylesheet" href="style.css">
+</head>
 
-answers:[
-{text:"الشجرة + المفتاح",type:"A"},
-{text:"الشجرة + القفص",type:"B"},
-{text:"المفتاح + القفص",type:"C"}
-]
-}
+<body>
 
-];
+<div class="container">
 
-let currentQuestion=0;
+<h1>اختبار نمط الإدراك المعرفي</h1>
 
-let scores={
-A:0,
-B:0,
-C:0
-};
+<p>
+هذا الاختبار لا يقيس الذكاء...
+بل الطريقة التي يبني بها عقلك المعنى والعلاقات بين الأشياء.
+</p>
 
-const container =
-document.getElementById("question-container");
+<div id="question-container"></div>
 
-function loadQuestion(){
+<button id="nextBtn">التالي</button>
 
-const q=questions[currentQuestion];
-
-container.innerHTML=`
-
-<img src="${q.image}">
-
-<h2>${q.question}</h2>
-
-${q.answers.map(answer=>`
-
-<div class="choice"
-onclick="selectAnswer('${answer.type}')">
-
-${answer.text}
+<div id="result"></div>
 
 </div>
 
-`).join("")}
+<script src="script.js"></script>
 
-`;
-
-}
-
-function selectAnswer(type){
-
-scores[type]++;
-
-currentQuestion++;
-
-if(currentQuestion<questions.length){
-
-loadQuestion();
-
-}
-
-else{
-
-showResult();
-
-}
-
-}
-
-function showResult(){
-
-let resultType="A";
-
-if(scores.B>scores.A &&
-scores.B>scores.C){
-
-resultType="B";
-
-}
-
-if(scores.C>scores.A &&
-scores.C>scores.B){
-
-resultType="C";
-
-}
-
-let text="";
-
-if(resultType==="A"){
-text="النمط الرمزي";
-}
-
-if(resultType==="B"){
-text="النمط التحليلي";
-}
-
-if(resultType==="C"){
-text="النمط السياقي";
-}
-
-container.innerHTML="";
-
-document.getElementById("nextBtn").style.display="none";
-
-document.getElementById("result").innerHTML=
-
-`<h1>${text}</h1>`;
-
-}
-
-loadQuestion();
+</body>
+</html>
