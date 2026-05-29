@@ -91,28 +91,27 @@ human:0,
 symbolic:0
 };
 
-const container = document.getElementById("question-container");
-const result = document.getElementById("result");
+const container =
+document.getElementById("question-container");
+
+const result =
+document.getElementById("result");
 
 function loadQuestion(){
 
 const q = questions[currentQuestion];
 
-container.innerHTML = `
-<h3>السؤال ${currentQuestion + 1} من ${questions.length}</h3>
+const progress =
+((currentQuestion) /
+questions.length) * 100;
 
-<img src="${q.image}"
-style="width:100%;border-radius:18px;margin-bottom:20px;">
-
-<h2>${q.question}</h2>
-
-${q.answers.map(answer=>`
+container.innerHTML =   <div class="progress"> <div class="progress-fill" style="width:${progress}%"> </div> </div>  <h3> السؤال ${currentQuestion + 1} من ${questions.length} </h3>  <img src="${q.image}">  <h2>${q.question}</h2>  ${q.answers.map(answer=>
 <div class="choice"
 onclick="selectAnswer('${answer.type}')">
 ${answer.text}
 </div>
-`).join("")}
-`;
+).join("")}  ;
+
 }
 
 function selectAnswer(type){
@@ -122,9 +121,13 @@ scores[type]++;
 currentQuestion++;
 
 if(currentQuestion < questions.length){
+
 loadQuestion();
+
 }else{
+
 showResult();
+
 }
 
 }
@@ -133,8 +136,9 @@ function showResult(){
 
 container.innerHTML="";
 
-const winner = Object.keys(scores).reduce((a,b)=>
-scores[a] > scores[b] ? a : b
+const winner =
+Object.keys(scores).reduce(
+(a,b)=>scores[a] > scores[b] ? a : b
 );
 
 let title="";
@@ -160,61 +164,29 @@ title="🜂 النمط الرمزي";
 desc="تميل لربط الأشياء بالمعاني العميقة والرموز والاستعارات أكثر من الواقع المباشر.";
 }
 
-result.innerHTML = `
-<div style="
-background:white;
-color:#111;
-padding:25px;
-border-radius:20px;
-margin-top:20px;
-">
+const total =
+questions.length;
 
-<h2>${title}</h2>
+const builderP =
+Math.round(scores.builder/total100);
 
-<p>${desc}</p>
+const explorerP =
+Math.round(scores.explorer/total100);
 
-<hr>
+const humanP =
+Math.round(scores.human/total100);
 
-<h3>مشاركة النتيجة</h3>
+const symbolicP =
+Math.round(scores.symbolic/total100);
 
-<button onclick="shareResult()">
-📤 مشاركة النتيجة
-</button>
+result.innerHTML =  <div class="result-card">  <h1>${title}</h1>  <p>${desc}</p>  <hr>  <h3> تفاصيل النتيجة </h3>  <div class="score-row"> 🔧 البنائي ${builderP}% <div class="score-bar"> <div class="score-fill" style="width:${builderP}%"> </div> </div> </div>  <div class="score-row"> 🧭 الاستكشافي ${explorerP}% <div class="score-bar"> <div class="score-fill" style="width:${explorerP}%"> </div> </div> </div>  <div class="score-row"> ❤️ الإنساني ${humanP}% <div class="score-bar"> <div class="score-fill" style="width:${humanP}%"> </div> </div> </div>  <div class="score-row"> 🜂 الرمزي ${symbolicP}% <div class="score-bar"> <div class="score-fill" style="width:${symbolicP}%"> </div> </div> </div>  <hr>  <button onclick="shareResult()"> 📤 مشاركة النتيجة </button>  <button onclick="shareWhatsApp()"> 🟢 واتساب </button>  <button onclick="copyLink()"> 🔗 نسخ الرابط </button>  <button onclick="location.reload()"> 🔄 إعادة الاختبار </button>  <hr>  <h3> هل ترغب بمعرفة نفسك بشكل أعمق؟ </h3>  <p> • اختبار الشخصية MBTI<br> • اختبار الذكاءات المتعددة<br> • اختبار أسلوب التعلم<br> • اختبار اتخاذ القرار<br> • اختبار التفكير الرمزي </p>  </div> ;
 
-<button onclick="shareWhatsApp()">
-🟢 واتساب
-</button>
-
-<button onclick="copyLink()">
-🔗 نسخ الرابط
-</button>
-
-<button onclick="location.reload()">
-🔄 إعادة الاختبار
-</button>
-
-<hr>
-
-<h3>هل تريد اختباراً أعمق؟</h3>
-
-<p>
-• اختبار الذكاء المنطقي<br>
-• اختبار التفكير الرمزي<br>
-• اختبار الشخصية المعرفية<br>
-• اختبار أسلوب اتخاذ القرار<br>
-• اختبار الذكاءات المتعددة
-</p>
-
-</div>
-`;
 }
 
 function shareResult(){
 
 const text =
-document.getElementById("result").innerText +
-"\n\nجرب الاختبار:\n" +
-window.location.href;
+document.getElementById("result").innerText;
 
 if(navigator.share){
 
@@ -223,10 +195,6 @@ title:"اختبار نمط الإدراك المعرفي",
 text:text
 });
 
-}else{
-
-alert(text);
-
 }
 
 }
@@ -234,9 +202,7 @@ alert(text);
 function shareWhatsApp(){
 
 const text =
-document.getElementById("result").innerText +
-"\n\nجرب الاختبار:\n" +
-window.location.href;
+document.getElementById("result").innerText;
 
 window.open(
 "https://wa.me/?text=" +
