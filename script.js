@@ -99,7 +99,11 @@ function loadQuestion(){
 const q = questions[currentQuestion];
 
 container.innerHTML = `
-<img src="${q.image}" style="width:100%;border-radius:20px;margin-bottom:20px;">
+<h3>السؤال ${currentQuestion + 1} من ${questions.length}</h3>
+
+<img src="${q.image}"
+style="width:100%;border-radius:18px;margin-bottom:20px;">
+
 <h2>${q.question}</h2>
 
 ${q.answers.map(answer=>`
@@ -109,7 +113,6 @@ ${answer.text}
 </div>
 `).join("")}
 `;
-
 }
 
 function selectAnswer(type){
@@ -119,13 +122,9 @@ scores[type]++;
 currentQuestion++;
 
 if(currentQuestion < questions.length){
-
 loadQuestion();
-
 }else{
-
 showResult();
-
 }
 
 }
@@ -142,80 +141,59 @@ let title="";
 let desc="";
 
 if(winner==="builder"){
-title="النمط البنائي";
+title="🔧 النمط البنائي";
 desc="تميل إلى رؤية البنية والمنطق والنظام. تركز على كيفية عمل الأشياء وترابطها العملي.";
 }
 
 if(winner==="explorer"){
-title="النمط الاستكشافي";
+title="🧭 النمط الاستكشافي";
 desc="تنجذب للمجهول والاحتمالات والطرق الجديدة. تبحث دائماً عما وراء الصورة الظاهرة.";
 }
 
 if(winner==="human"){
-title="النمط الإنساني";
+title="❤️ النمط الإنساني";
 desc="ترى العلاقات البشرية والمشاعر والدوافع قبل التفاصيل الأخرى.";
 }
 
 if(winner==="symbolic"){
-title="النمط الرمزي";
-desc="تميل لربط الأشياء بالمعاني العميقة والرموز والاستعارات أكثر من الواقع المباشر.";
-}
-
-function showResult(){
-
-container.innerHTML="";
-
-const winner = Object.keys(scores).reduce((a,b)=>
-scores[a] > scores[b] ? a : b
-);
-
-let title="";
-let desc="";
-
-if(winner==="builder"){
-title="النمط البنائي";
-desc="تميل إلى رؤية البنية والمنطق والنظام. تركز على كيفية عمل الأشياء وترابطها العملي.";
-}
-
-if(winner==="explorer"){
-title="النمط الاستكشافي";
-desc="تنجذب للمجهول والاحتمالات والطرق الجديدة. تبحث دائماً عما وراء الصورة الظاهرة.";
-}
-
-if(winner==="human"){
-title="النمط الإنساني";
-desc="ترى العلاقات البشرية والمشاعر والدوافع قبل التفاصيل الأخرى.";
-}
-
-if(winner==="symbolic"){
-title="النمط الرمزي";
+title="🜂 النمط الرمزي";
 desc="تميل لربط الأشياء بالمعاني العميقة والرموز والاستعارات أكثر من الواقع المباشر.";
 }
 
 result.innerHTML = `
+<div style="
+background:white;
+color:#111;
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+">
+
 <h2>${title}</h2>
 
 <p>${desc}</p>
 
-<br>
+<hr>
 
-<div style="display:flex;flex-direction:column;gap:12px;">
+<h3>مشاركة النتيجة</h3>
 
 <button onclick="shareResult()">
 📤 مشاركة النتيجة
 </button>
 
 <button onclick="shareWhatsApp()">
-🟢 مشاركة عبر واتساب
+🟢 واتساب
+</button>
+
+<button onclick="copyLink()">
+🔗 نسخ الرابط
 </button>
 
 <button onclick="location.reload()">
 🔄 إعادة الاختبار
 </button>
 
-</div>
-
-<br><br>
+<hr>
 
 <h3>هل تريد اختباراً أعمق؟</h3>
 
@@ -226,29 +204,26 @@ result.innerHTML = `
 • اختبار أسلوب اتخاذ القرار<br>
 • اختبار الذكاءات المتعددة
 </p>
+
+</div>
 `;
-
 }
 
-}
-
-loadQuestion();
-
-function shareResult() {
+function shareResult(){
 
 const text =
 document.getElementById("result").innerText +
 "\n\nجرب الاختبار:\n" +
 window.location.href;
 
-if (navigator.share) {
+if(navigator.share){
 
 navigator.share({
-title: "اختبار نمط الإدراك المعرفي",
-text: text
+title:"اختبار نمط الإدراك المعرفي",
+text:text
 });
 
-} else {
+}else{
 
 alert(text);
 
@@ -256,7 +231,7 @@ alert(text);
 
 }
 
-function shareWhatsApp() {
+function shareWhatsApp(){
 
 const text =
 document.getElementById("result").innerText +
@@ -269,3 +244,14 @@ encodeURIComponent(text)
 );
 
 }
+
+function copyLink(){
+
+navigator.clipboard.writeText(
+window.location.href
+);
+
+alert("تم نسخ الرابط");
+}
+
+loadQuestion();
