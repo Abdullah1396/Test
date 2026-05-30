@@ -101,14 +101,7 @@ const q = questions[currentQuestion];
 const progress =
 (currentQuestion / questions.length) * 100;
 
-function showResult(){
-
-container.innerHTML = "";
-
-const winner =
-Object.keys(scores).reduce(
-(a,b)=>scores[a] > scores[b] ? a : b
-);
+container.innerHTML = `
 <div class="progress">
 <div class="progress-fill"
 style="width:${progress}%"></div>
@@ -116,8 +109,7 @@ style="width:${progress}%"></div>
 
 <h3>
 السؤال ${currentQuestion + 1}
-من
-${questions.length}
+من ${questions.length}
 </h3>
 
 <img src="${q.image}">
