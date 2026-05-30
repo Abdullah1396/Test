@@ -130,3 +130,12 @@ border:none;
 height:1px;
 background:#ddd;
 }
+
+.intro-box{
+background:rgba(255,255,255,.08);
+padding:25px;
+border-radius:20px;
+margin:25px 0;
+line-height:1.9;
+font-size:18px;
+}
