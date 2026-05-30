@@ -178,6 +178,9 @@ challengeText="قد تتشتت بين الاحتمالات الكثيرة.";
 }
 
   if(winner==="human"){
+title="❤️ النمط الإنساني";
+desc="تركز على البشر والمشاعر والدوافع قبل التفاصيل الأخرى.";
+
 decisionText="تراعي مشاعر الآخرين عند اتخاذ القرار.";
 learningText="تتعلم بالحوار والتفاعل الإنساني.";
 careerText="التعليم، الموارد البشرية، الإرشاد، العلاقات العامة.";
@@ -185,6 +188,9 @@ challengeText="قد تضع احتياجات الآخرين قبل نفسك.";
 }
   
 if(winner==="symbolic"){
+title="△ النمط الرمزي";
+desc="ترى الرموز والاستعارات أكثر من الواقع المباشر.";
+
 decisionText="تبحث عن المعاني العميقة والأنماط الخفية.";
 learningText="تتعلم بالربط بين الأفكار والرموز.";
 careerText="الكتابة، التصميم، الفلسفة، الإبداع.";
@@ -212,7 +218,7 @@ result.innerHTML = `
 🔧 البنائي ${builderP}%
 <div class="score-bar">
 <div class="score-fill" style="width:${builderP}%"></div>
-</div>
+</div>في
 </div>
 
 <div class="score-row">
