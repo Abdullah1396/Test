@@ -251,7 +251,11 @@ const symbolicP = Math.round((scores.symbolic / total) * 100);
 result.innerHTML = `
 <div class="result-card">
 
-<h1>${title}</h1>
+<<h1>${title}</h1>
+
+<h3 style="color:#666;">
+${comboTitle}
+</h3>
 
 <p>${desc}</p>
 
