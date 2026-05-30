@@ -253,3 +253,249 @@ border:none;
 border-radius:40px;
 cursor:pointer;
 }
+
+
+.premium-card{
+
+position:relative;
+
+margin:50px 0;
+
+padding:50px 25px;
+
+border-radius:35px;
+
+overflow:hidden;
+
+background:#050816;
+
+border:2px solid rgba(120,120,255,.3);
+
+box-shadow:
+0 0 20px #1d6fff,
+0 0 40px #1d6fff,
+0 0 80px rgba(200,0,255,.3);
+
+color:white;
+
+text-align:center;
+
+}
+
+.premium-grid{
+
+position:absolute;
+
+inset:0;
+
+background:
+
+linear-gradient(
+rgba(0,180,255,.08) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,0,255,.08) 1px,
+transparent 1px
+);
+
+background-size:40px 40px;
+
+animation:gridMove 12s linear infinite;
+
+opacity:.6;
+
+}
+
+@keyframes gridMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(40px);
+}
+
+}
+
+.premium-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-200px;
+left:-200px;
+
+width:400px;
+height:400px;
+
+background:
+
+radial-gradient(
+circle,
+rgba(0,150,255,.25),
+transparent 70%
+);
+
+}
+
+.premium-card::after{
+
+content:"";
+
+position:absolute;
+
+right:-200px;
+bottom:-200px;
+
+width:400px;
+height:400px;
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,0,255,.25),
+transparent 70%
+);
+
+}
+
+.premium-header{
+
+position:relative;
+z-index:2;
+
+}
+
+.brain{
+
+font-size:60px;
+
+margin-bottom:10px;
+
+}
+
+.premium-label{
+
+letter-spacing:4px;
+
+color:#ffcc33;
+
+margin-bottom:10px;
+
+}
+
+.premium-card h2{
+
+font-size:42px;
+
+color:white;
+
+margin-bottom:20px;
+
+text-shadow:
+0 0 20px rgba(255,255,255,.4);
+
+}
+
+.premium-card p{
+
+font-size:22px;
+
+line-height:1.8;
+
+color:#d6d6d6;
+
+margin-bottom:40px;
+
+}
+
+.premium-features{
+
+position:relative;
+z-index:2;
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:15px;
+
+margin-bottom:40px;
+
+}
+
+.feature{
+
+padding:20px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+backdrop-filter:
+blur(10px);
+
+box-shadow:
+0 0 15px rgba(0,180,255,.15);
+
+transition:.3s;
+
+font-size:20px;
+
+}
+
+.feature:hover{
+
+transform:
+translateY(-5px);
+
+box-shadow:
+0 0 25px rgba(255,0,255,.4);
+
+}
+
+.feature span{
+
+display:block;
+
+margin-top:10px;
+
+}
+
+.premium-btn{
+
+position:relative;
+z-index:2;
+
+border:none;
+
+padding:20px 60px;
+
+border-radius:60px;
+
+font-size:30px;
+
+font-weight:bold;
+
+background:#ffb300;
+
+color:black;
+
+cursor:pointer;
+
+box-shadow:
+0 0 20px #ffb300,
+0 0 50px #ffb300;
+
+}
