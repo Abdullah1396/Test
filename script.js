@@ -307,65 +307,8 @@ ${comboTitle}
 <p>${challengeText}</p>
 
 
-<div class="premium-card">
-
-<div class="premium-grid"></div>
-
-<div class="premium-header">
-
-<div class="brain">🧠</div>
-
-<div class="premium-label">
-PREMIUM
-</div>
-
-<h2>التقييم المعرفي المتقدم</h2>
-
-<p>
-40 سؤالاً متقدماً وتحليلاً معرفياً عميقاً
-يكشف أسلوب التفكير والدوافع وأنماط اتخاذ القرار.
-</p>
-
-</div>
-
-<div class="premium-features">
-
-<div class="feature">
-📚
-<span>تحليل أسلوب التعلم</span>
-</div>
-
-<div class="feature">
-🎯
-<span>تحليل اتخاذ القرار</span>
-</div>
-
-<div class="feature">
-🧠
-<span>تحليل أنماط التفكير</span>
-</div>
-
-<div class="feature">
-📊
-<span>تقرير معرفي احترافي</span>
-</div>
-
-<div class="feature">
-💼
-<span>البيئة المهنية المناسبة</span>
-</div>
-
-<div class="feature">
-🛡️
-<span>نقاط القوة والتحديات</span>
-</div>
-
-</div>
-
-<button class="premium-btn">
-🚀 قريباً
-</button>
-
+<div class="premium-banner" onclick="alert('🚀 التقييم المعرفي المتقدم قريباً')">
+    <img src="images/1FD26B9F-926B-4014-80B2-6A27FECA0791.png" alt="Premium Assessment">
 </div>
 
 
