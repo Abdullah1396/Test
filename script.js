@@ -316,6 +316,47 @@ ${comboTitle}
 
 <hr>
 
+<div style="
+margin:30px 0;
+padding:25px;
+border-radius:20px;
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+border:1px solid rgba(255,255,255,.15);
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+">
+
+<div style="font-size:50px;">🧠</div>
+
+<h2 style="
+margin:10px 0;
+color:white;
+">
+التقييم المعرفي المتقدم
+</h2>
+
+<p style="
+color:#cbd5e1;
+line-height:1.8;
+">
+40 سؤالاً متقدماً وتحليلاً معرفياً عميقاً
+يكشف أسلوب التفكير والدوافع وأنماط اتخاذ القرار.
+</p>
+
+<div style="
+display:inline-block;
+padding:10px 22px;
+background:#f59e0b;
+color:#000;
+font-weight:bold;
+border-radius:999px;
+margin-top:10px;
+">
+🚀 قريباً
+</div>
+
+</div>
+
 <button onclick="shareWhatsApp()">
 🟢 مشاركة عبر واتساب
 </button>
