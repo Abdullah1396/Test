@@ -188,7 +188,7 @@ decisionText="تبحث عن المعاني العميقة والأنماط ال�
 learningText="تتعلم بالربط بين الأفكار والرموز.";
 careerText="الكتابة، التصميم، الفلسفة، الإبداع.";
 challengeText="قد تفرط أحياناً في التأويل والتحليل.";
-
+}
 const total = questions.length;
 
 const builderP = Math.round((scores.builder / total) * 100);
