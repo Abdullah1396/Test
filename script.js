@@ -101,7 +101,14 @@ const q = questions[currentQuestion];
 const progress =
 (currentQuestion / questions.length) * 100;
 
-container.innerHTML = `
+function showResult(){
+
+container.innerHTML = "";
+
+const winner =
+Object.keys(scores).reduce(
+(a,b)=>scores[a] > scores[b] ? a : b
+);
 <div class="progress">
 <div class="progress-fill"
 style="width:${progress}%"></div>
