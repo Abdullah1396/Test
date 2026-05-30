@@ -131,16 +131,21 @@ height:1px;
 background:#ddd;
 }
 
-.intro-box{
+..intro-box{
 background:rgba(255,255,255,.08);
-padding:25px;
+padding:12px 20px;
 border-radius:20px;
-margin:25px 0;
-line-height:1.9;
-font-size:18px;
+margin:15px 0;
+line-height:1.6;
+font-size:16px;
+cursor:pointer;
 }
 
-
+.intro-box h2{
+font-size:26px;
+margin:0 0 10px 0;
+line-height:1.4;
+}
 
 .hero-image{
 width:100%;
