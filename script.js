@@ -21,42 +21,12 @@ answers:[
 },
 
 {
-image:"images/108E05AF-A09E-4DB1-A9D8-40D38EBA0308.png",
-question:"أي رابط ظهر في ذهنك أولاً؟",
-answers:[
-{text:"المرآة + الكتاب",type:"human"},
-{text:"الكتاب + الباب",type:"explorer"},
-{text:"المرآة + الباب",type:"symbolic"}
-]
-},
-
-{
-image:"images/B5C20064-5633-4859-8277-41224BD32335.png",
-question:"أي رابط ظهر في ذهنك أولاً؟",
-answers:[
-{text:"الطفل + المظلة",type:"human"},
-{text:"المظلة + الأرجوحة",type:"builder"},
-{text:"الطفل + الأرجوحة",type:"symbolic"}
-]
-},
-
-{
 image:"images/EE394658-227B-45D9-9191-4702BB0F9C2B.png",
 question:"أي رابط ظهر في ذهنك أولاً؟",
 answers:[
-{text:"القفص + المفتاح",type:"builder"},
-{text:"المفتاح + النافذة",type:"explorer"},
-{text:"القفص + النافذة",type:"symbolic"}
-]
-},
-
-{
-image:"images/17B21646-A7B8-416D-9582-1396FC95872D.png",
-question:"أي رابط ظهر في ذهنك أولاً؟",
-answers:[
-{text:"الحقيبة + الفانوس",type:"explorer"},
-{text:"الفانوس + الكرسي",type:"builder"},
-{text:"الحقيبة + الكرسي",type:"human"}
+{text:"القفص + المفتاح", type:"builder"},
+{text:"المفتاح + النافذة", type:"explorer"},
+{text:"القفص + النافذة", type:"symbolic"}
 ]
 },
 
@@ -64,9 +34,9 @@ answers:[
 image:"images/2DCE45C1-BEC4-449B-8D6D-5940E212F8CB.png",
 question:"أي رابط ظهر في ذهنك أولاً؟",
 answers:[
-{text:"القناع + الشمعة",type:"human"},
-{text:"الشمعة + الدرج",type:"explorer"},
-{text:"القناع + الدرج",type:"symbolic"}
+{text:"القناع + الشمعة", type:"human"},
+{text:"الشمعة + الدرج", type:"explorer"},
+{text:"القناع + الدرج", type:"symbolic"}
 ]
 },
 
@@ -74,9 +44,39 @@ answers:[
 image:"images/3837A93E-B92B-4DA9-A6DD-D59415288121.png",
 question:"أي رابط ظهر في ذهنك أولاً؟",
 answers:[
-{text:"الشخص + الجسر",type:"builder"},
-{text:"الجسر + الضباب",type:"explorer"},
-{text:"الشخص + الضباب",type:"symbolic"}
+{text:"الشخص + الجسر", type:"builder"},
+{text:"الجسر + الضباب", type:"explorer"},
+{text:"الشخص + الضباب", type:"symbolic"}
+]
+},
+
+{
+image:"images/108E05AF-A09E-4DB1-A9D8-40D38EBA0308.png",
+question:"أي رابط ظهر في ذهنك أولاً؟",
+answers:[
+{text:"المرآة + الكتاب", type:"human"},
+{text:"الكتاب + الباب", type:"explorer"},
+{text:"المرآة + الباب", type:"symbolic"}
+]
+},
+
+{
+image:"images/17B21646-A7B8-416D-9582-1396FC95872D.png",
+question:"أي رابط ظهر في ذهنك أولاً؟",
+answers:[
+{text:"الحقيبة + الفانوس", type:"explorer"},
+{text:"الفانوس + الكرسي", type:"builder"},
+{text:"الحقيبة + الكرسي", type:"human"}
+]
+},
+
+{
+image:"images/B5C20064-5633-4859-8277-41224BD32335.png",
+question:"أي رابط ظهر في ذهنك أولاً؟",
+answers:[
+{text:"الطفل + المظلة", type:"human"},
+{text:"المظلة + الأرجوحة", type:"builder"},
+{text:"الطفل + الأرجوحة", type:"symbolic"}
 ]
 }
 
