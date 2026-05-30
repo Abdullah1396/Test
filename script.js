@@ -196,6 +196,51 @@ learningText="تتعلم بالربط بين الأفكار والرموز.";
 careerText="الكتابة، التصميم، الفلسفة، الإبداع.";
 challengeText="قد تفرط أحياناً في التأويل والتحليل.";
 }
+
+const sorted = Object.entries(scores)
+.sort((a,b)=>b[1]-a[1]);
+
+const primaryType = sorted[0][0];
+const secondaryType = sorted[1][0];
+
+let comboTitle="";
+
+if(primaryType==="human" && secondaryType==="builder")
+comboTitle="❤️🔧 إنساني - بنائي";
+
+if(primaryType==="human" && secondaryType==="explorer")
+comboTitle="❤️🧭 إنساني - استكشافي";
+
+if(primaryType==="human" && secondaryType==="symbolic")
+comboTitle="❤️△ إنساني - رمزي";
+
+if(primaryType==="builder" && secondaryType==="human")
+comboTitle="🔧❤️ بنائي - إنساني";
+
+if(primaryType==="builder" && secondaryType==="explorer")
+comboTitle="🔧🧭 بنائي - استكشافي";
+
+if(primaryType==="builder" && secondaryType==="symbolic")
+comboTitle="🔧△ بنائي - رمزي";
+
+if(primaryType==="explorer" && secondaryType==="human")
+comboTitle="🧭❤️ استكشافي - إنساني";
+
+if(primaryType==="explorer" && secondaryType==="builder")
+comboTitle="🧭🔧 استكشافي - بنائي";
+
+if(primaryType==="explorer" && secondaryType==="symbolic")
+comboTitle="🧭△ استكشافي - رمزي";
+
+if(primaryType==="symbolic" && secondaryType==="human")
+comboTitle="△❤️ رمزي - إنساني";
+
+if(primaryType==="symbolic" && secondaryType==="builder")
+comboTitle="△🔧 رمزي - بنائي";
+
+if(primaryType==="symbolic" && secondaryType==="explorer")
+comboTitle="△🧭 رمزي - استكشافي";
+  
 const total = questions.length;
 
 const builderP = Math.round((scores.builder / total) * 100);
