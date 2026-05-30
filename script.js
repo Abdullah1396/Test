@@ -316,46 +316,41 @@ ${comboTitle}
 
 <hr>
 
-<div style="
-margin:30px 0;
-padding:25px;
-border-radius:20px;
-background:linear-gradient(135deg,#0f172a,#1e3a8a);
-border:1px solid rgba(255,255,255,.15);
-text-align:center;
-box-shadow:0 10px 30px rgba(0,0,0,.3);
-">
+<hr>
 
-<div style="font-size:50px;">🧠</div>
+<div class="premium-card">
 
-<h2 style="
-margin:10px 0;
-color:white;
-">
-التقييم المعرفي المتقدم
-</h2>
+<div class="premium-badge">🧠 PREMIUM</div>
 
-<p style="
-color:#cbd5e1;
-line-height:1.8;
-">
+<h2>التقييم المعرفي المتقدم</h2>
+
+<p>
 40 سؤالاً متقدماً وتحليلاً معرفياً عميقاً
 يكشف أسلوب التفكير والدوافع وأنماط اتخاذ القرار.
 </p>
 
-<div style="
-display:inline-block;
-padding:10px 22px;
-background:#f59e0b;
-color:#000;
-font-weight:bold;
-border-radius:999px;
-margin-top:10px;
-">
-🚀 قريباً
-</div>
+<div class="premium-features">
+
+<div>📚 تحليل أسلوب التعلم</div>
+
+<div>🎯 تحليل اتخاذ القرار</div>
+
+<div>🧠 تحليل أنماط التفكير</div>
+
+<div>📊 تقرير معرفي احترافي</div>
+
+<div>💼 البيئة المهنية المناسبة</div>
+
+<div>🛡️ نقاط القوة والتحديات</div>
 
 </div>
+
+<button class="premium-btn">
+🚀 قريباً
+</button>
+
+</div>
+
 
 <button onclick="shareWhatsApp()">
 🟢 مشاركة عبر واتساب
