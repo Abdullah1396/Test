@@ -309,7 +309,7 @@ ${comboTitle}
 
 
 
-<div class="premium-banner" onclick="alert('🚀 قريباً')">
+<div class="premium-banner" onclick="window.location.href='premium.html'">
     <img src="images/1FD26B9F-926B-4014-80B2-6A27FECA0791.png">
 </div>
 
