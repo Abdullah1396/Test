@@ -533,3 +533,19 @@ box-shadow:
     display:block;
     border-radius:30px;
 }
+
+.methodology-link{
+display:block;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+text-decoration:none;
+color:#6f7cff;
+margin:30px 0;
+transition:.3s;
+}
+
+.methodology-link:hover{
+transform:scale(1.03);
+color:#9ca8ff;
+}
