@@ -499,3 +499,22 @@ box-shadow:
 0 0 50px #ffb300;
 
 }
+
+
+.premium-banner{
+    margin:35px auto;
+    border-radius:30px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.premium-banner:hover{
+    transform:scale(1.02);
+}
+
+.premium-banner img{
+    width:100%;
+    display:block;
+    border-radius:30px;
+}
