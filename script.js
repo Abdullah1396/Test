@@ -155,7 +155,6 @@ let decisionText = "";
 let learningText = "";
 let careerText = "";
 let challengeText = "";
-let strengthsText = "";
   
 if(winner==="builder"){
 title="🔧 النمط البنائي";
@@ -165,7 +164,6 @@ decisionText="تميل لاتخاذ قرارات عملية ومباشرة.";
 learningText="تتعلم بالتطبيق والتنفيذ.";
 careerText="الإدارة، المشاريع، الهندسة، التشغيل.";
 challengeText="قد تتجاهل بعض الأفكار الجديدة بسرعة.";
-  strengthsText="التنظيم، التنفيذ، التفكير العملي، حل المشكلات.";
 }
 
 if(winner==="explorer"){
@@ -176,7 +174,6 @@ decisionText="تميل لتجربة الخيارات قبل الالتزام ب�
 learningText="تتعلم بالاكتشاف والتجربة والبحث.";
 careerText="البحث، التسويق، الابتكار، ريادة الأعمال.";
 challengeText="قد تتشتت بين الاحتمالات الكثيرة.";
-  strengthsText="الفضول، الابتكار، سرعة التعلم، اكتشاف الفرص.";
 }
 
   if(winner==="human"){
@@ -187,7 +184,6 @@ decisionText="تراعي مشاعر الآخرين عند اتخاذ القرا�
 learningText="تتعلم بالحوار والتفاعل الإنساني.";
 careerText="التعليم، الموارد البشرية، الإرشاد، العلاقات العامة.";
 challengeText="قد تضع احتياجات الآخرين قبل نفسك.";
-    strengthsText="التعاطف، فهم الآخرين، بناء العلاقات، التعاون.";
 }
   
 if(winner==="symbolic"){
@@ -198,7 +194,6 @@ decisionText="تبحث عن المعاني العميقة والأنماط ال�
 learningText="تتعلم بالربط بين الأفكار والرموز.";
 careerText="الكتابة، التصميم، الفلسفة، الإبداع.";
 challengeText="قد تفرط أحياناً في التأويل والتحليل.";
-  strengthsText="الإبداع، الرؤية العميقة، التفكير المجرد، الخيال.";
 }
 
 const sorted = Object.entries(scores)
@@ -308,19 +303,21 @@ ${comboTitle}
 <h3>💼 المجالات المناسبة لك</h3>
 <p>${careerText}</p>
 
-<h3>💪 نقاط القوة</h3>
-<p>${strengthsText}</p>
-
 <h3>⚠️ التحدي المحتمل</h3>
 <p>${challengeText}</p>
 
-<hr>
-
-<hr>
 
 <div class="premium-card">
 
-<div class="premium-badge">🧠 PREMIUM</div>
+<div class="premium-grid"></div>
+
+<div class="premium-header">
+
+<div class="brain">🧠</div>
+
+<div class="premium-label">
+PREMIUM
+</div>
 
 <h2>التقييم المعرفي المتقدم</h2>
 
@@ -329,19 +326,39 @@ ${comboTitle}
 يكشف أسلوب التفكير والدوافع وأنماط اتخاذ القرار.
 </p>
 
+</div>
+
 <div class="premium-features">
 
-<div>📚 تحليل أسلوب التعلم</div>
+<div class="feature">
+📚
+<span>تحليل أسلوب التعلم</span>
+</div>
 
-<div>🎯 تحليل اتخاذ القرار</div>
+<div class="feature">
+🎯
+<span>تحليل اتخاذ القرار</span>
+</div>
 
-<div>🧠 تحليل أنماط التفكير</div>
+<div class="feature">
+🧠
+<span>تحليل أنماط التفكير</span>
+</div>
 
-<div>📊 تقرير معرفي احترافي</div>
+<div class="feature">
+📊
+<span>تقرير معرفي احترافي</span>
+</div>
 
-<div>💼 البيئة المهنية المناسبة</div>
+<div class="feature">
+💼
+<span>البيئة المهنية المناسبة</span>
+</div>
 
-<div>🛡️ نقاط القوة والتحديات</div>
+<div class="feature">
+🛡️
+<span>نقاط القوة والتحديات</span>
+</div>
 
 </div>
 
@@ -351,6 +368,8 @@ ${comboTitle}
 
 </div>
 
+
+<hr>
 
 <button onclick="shareWhatsApp()">
 🟢 مشاركة عبر واتساب
