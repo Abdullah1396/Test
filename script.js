@@ -143,7 +143,7 @@ showResult();
 
 function showResult(){
 
-container.innerHTML = "";
+container.innerHTML = `
 
 const winner =
 Object.keys(scores).reduce(
