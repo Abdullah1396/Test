@@ -307,12 +307,7 @@ ${comboTitle}
 <p>${challengeText}</p>
 
 
-<div class="premium-banner" onclick="alert('🚀 التقييم المعرفي المتقدم قريباً')">
-    <img src="images/1FD26B9F-926B-4014-80B2-6A27FECA0791.png" alt="Premium Assessment">
-</div>
 
-
-<hr>
 
 <div class="premium-banner" onclick="alert('🚀 قريباً')">
     <img src="images/1FD26B9F-926B-4014-80B2-6A27FECA0791.png">
