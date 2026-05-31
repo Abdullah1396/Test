@@ -1,3 +1,21 @@
+const SUPABASE_URL = "ضع رابط مشروعك هنا";
+const SUPABASE_KEY = "ضع publishable key هنا";
+
+const supabaseClient = supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+const sessionId =
+localStorage.getItem("mindlens_session") ||
+crypto.randomUUID();
+
+localStorage.setItem(
+"mindlens_session",
+sessionId
+);
+
+
 const questions = [
 
 {
