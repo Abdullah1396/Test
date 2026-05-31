@@ -621,3 +621,31 @@ font-size:18px;
 text-align:center;
 border:1px solid rgba(255,255,255,.15);
 }
+
+
+.stats-box{
+display:flex;
+justify-content:space-between;
+gap:12px;
+margin:30px 0;
+}
+
+.stat{
+flex:1;
+background:rgba(255,255,255,.08);
+padding:18px;
+border-radius:18px;
+border:1px solid rgba(255,255,255,.12);
+text-align:center;
+}
+
+.num{
+font-size:34px;
+font-weight:bold;
+color:#ffb300;
+}
+
+.label{
+font-size:14px;
+opacity:.85;
+}
