@@ -161,7 +161,7 @@ box-shadow:0 10px 30px rgba(0,0,0,.35);
 
 
 .hero{
-background:url("images/DAD3FA5A-E822-4119-9EDE-BB64C3E248E4.png");
+background-image: url("DAD3FA5A-E822-4119-9EDE-BB64C3E248E4.png");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
