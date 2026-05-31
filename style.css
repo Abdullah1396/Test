@@ -554,3 +554,40 @@ transition:.3s;
 transform:scale(1.03);
 color:#9ca8ff;
 }
+
+
+.method-link{
+text-decoration:none;
+display:block;
+color:white;
+margin:25px 0;
+}
+
+.method-card{
+background:rgba(255,255,255,.08);
+padding:18px;
+border-radius:20px;
+text-align:center;
+border:2px solid rgba(255,255,255,.12);
+}
+
+.method-icon{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.method-card h2{
+font-size:24px;
+margin:0;
+}
+
+.method-card p{
+font-size:17px;
+opacity:.8;
+margin:10px 0;
+}
+
+.method-card span{
+color:#ffd700;
+font-weight:bold;
+}
