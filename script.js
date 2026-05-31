@@ -15,6 +15,40 @@ localStorage.setItem(
 sessionId
 );
 
+const SUPABASE_URL = "https://ejevfdgehbrnszjcnkdw.supabase.co";
+
+const SUPABASE_KEY = "ضع_المفتاح_هنا";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
+
+async function countVisitor() {
+  try {
+    await supabaseClient
+      .from("visitors")
+      .insert([{}]);
+
+    const { count } = await supabaseClient
+      .from("visitors")
+      .select("*", { count: "exact", head: true });
+
+    const visitorElement =
+      document.getElementById("visitor-count");
+
+    if (visitorElement) {
+      visitorElement.innerText = count || 0;
+    }
+
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+window.addEventListener("load", countVisitor);
+
+
 
 const questions = [
 
