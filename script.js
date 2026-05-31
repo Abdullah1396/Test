@@ -166,6 +166,15 @@ Object.keys(scores).reduce(
 (a,b)=>scores[a] > scores[b] ? a : b
 );
 
+
+  const winnerScore = scores[winner];
+
+saveResult(
+winner,
+winnerScore
+);
+
+  
 let title = "";
 let desc = "";
 
@@ -384,3 +393,23 @@ alert("تم نسخ الرابط");
 }
 
 loadQuestion();
+
+async function saveResult(pattern, score){
+
+try {
+
+await supabaseClient
+.from("results")
+.insert([{
+pattern: pattern,
+score: score,
+session_id: sessionId
+}]);
+
+} catch(error){
+
+console.error(error);
+
+}
+
+}
