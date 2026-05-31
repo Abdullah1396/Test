@@ -671,3 +671,30 @@ color:#ffb300;
 font-size:14px;
 opacity:.85;
 }
+
+
+.benefits-box{
+margin-top:35px;
+padding:25px;
+background:rgba(255,255,255,.05);
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.benefits-box h2{
+margin-bottom:20px;
+font-size:28px;
+}
+
+.benefit-item{
+background:rgba(255,255,255,.08);
+padding:18px;
+border-radius:18px;
+margin:12px 0;
+font-size:18px;
+text-align:right;
+}
+
+.stat{
+backdrop-filter:blur(10px);
+}
