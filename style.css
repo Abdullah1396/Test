@@ -131,7 +131,7 @@ height:1px;
 background:#ddd;
 }
 
-..intro-box{
+.intro-box{
 background:rgba(255,255,255,.08);
 padding:12px 20px;
 border-radius:20px;
@@ -160,7 +160,7 @@ box-shadow:0 10px 30px rgba(0,0,0,.35);
 }
 
 
-..hero{
+.hero{
 background:url("images/IMG_2898.jpeg");
 background-size:cover;
 background-position:center;
