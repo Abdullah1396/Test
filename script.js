@@ -1,29 +1,17 @@
-const SUPABASE_URL = "ضع رابط مشروعك هنا";
-const SUPABASE_KEY = "ضع publishable key هنا";
+
+
+
+
+const SUPABASE_URL =
+"https://ejevfdgehbrnszjcnkdw.supabase.co";
+
+const SUPABASE_KEY =
+"sb_publishable_vtj5cokGBSoHBZxHZepTpA_Ay9NUXv4";
 
 const supabaseClient = supabase.createClient(
 SUPABASE_URL,
 SUPABASE_KEY
 );
-
-const sessionId =
-localStorage.getItem("mindlens_session") ||
-crypto.randomUUID();
-
-localStorage.setItem(
-"mindlens_session",
-sessionId
-);
-
-const SUPABASE_URL = "https://ejevfdgehbrnszjcnkdw.supabase.co";
-
-const SUPABASE_KEY = "ضع_المفتاح_هنا";
-
-const supabaseClient = supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-
 async function countVisitor() {
   try {
     await supabaseClient
