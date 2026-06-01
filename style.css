@@ -698,3 +698,30 @@ text-align:right;
 .stat{
 backdrop-filter:blur(10px);
 }
+
+.benefits-box{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin:25px 0;
+}
+
+.benefits-box div{
+background:#f7f7f7;
+padding:16px;
+border-radius:14px;
+font-size:18px;
+font-weight:600;
+}
+
+.visitor-box{
+background:linear-gradient(135deg,#0d2f72,#143f95);
+color:white;
+padding:20px;
+border-radius:18px;
+font-size:30px;
+font-weight:bold;
+text-align:center;
+margin:20px 0;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
