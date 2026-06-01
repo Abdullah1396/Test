@@ -355,11 +355,34 @@ ${comboTitle}
 <h3>⚠️ التحدي المحتمل</h3>
 <p>${challengeText}</p>
 
+<hr>
 
+<h3>🎁 ماذا ستحصل عليه؟</h3>
 
+<div class="benefits-box">
+
+<div>✅ معرفة نمطك الإدراكي الأساسي</div>
+
+<div>✅ تحليل طريقة اتخاذ القرار</div>
+
+<div>✅ أفضل أساليب التعلم المناسبة لك</div>
+
+<div>✅ المجالات المهنية الأقرب لشخصيتك</div>
+
+<div>✅ ملف معرفي كامل يوضح نسب الأنماط الأربعة</div>
+
+</div>
+
+<hr>
+
+<h3>👥 عدد الزوار</h3>
+
+<div class="visitor-box">
+<span id="visitor-count">0</span>
+</div>
 
 <div class="premium-banner" onclick="window.location.href='premium.html'">
-    <img src="images/1FD26B9F-926B-4014-80B2-6A27FECA0791.png">
+<img src="images/1FD26B9F-926B-4014-80B2-6A27FECA0791.png">
 </div>
 
 <hr>
@@ -383,7 +406,6 @@ ${comboTitle}
 إلى بناء المعنى والعلاقات بين الأشياء،
 وليست مقياساً للذكاء أو القدرات العقلية.
 </p>
-
 </div>
 `;
 
