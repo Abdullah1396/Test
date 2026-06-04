@@ -12,6 +12,15 @@ const supabaseClient = supabase.createClient(
 SUPABASE_URL,
 SUPABASE_KEY
 );
+
+const sessionId =
+localStorage.getItem("sessionId") ||
+crypto.randomUUID();
+
+localStorage.setItem(
+"sessionId",
+sessionId
+);
 async function countVisitor() {
   try {
     await supabaseClient
