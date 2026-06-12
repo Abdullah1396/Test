@@ -693,7 +693,10 @@ border-radius:18px;
 margin:12px 0;
 font-size:18px;
 text-align:right;
+    color:white;
+font-weight:600;
 }
+
 
 .stat{
 backdrop-filter:blur(10px);
