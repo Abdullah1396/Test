@@ -143,3 +143,85 @@ text-align:center;
 font-size:18px;
 }
 
+/* =========================
+   STATS
+   ========================= */
+
+.stats-box{
+display:flex;
+justify-content:space-between;
+gap:15px;
+margin:30px 0;
+}
+
+.stat{
+flex:1;
+background:#0F172A;
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:20px;
+text-align:center;
+}
+
+.num{
+font-size:42px;
+font-weight:bold;
+color:#FBBF24;
+margin-bottom:8px;
+}
+
+.label{
+color:#CBD5E1;
+font-size:15px;
+}
+
+/* =========================
+   BENEFITS
+   ========================= */
+
+.benefits-box{
+margin-top:40px;
+padding:25px;
+background:#0F172A;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.benefits-box h2{
+text-align:center;
+margin-bottom:25px;
+font-size:32px;
+}
+
+.benefit-item{
+background:#111827;
+padding:18px;
+margin:12px 0;
+border-radius:16px;
+font-size:18px;
+border:1px solid rgba(255,255,255,.05);
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:32px;
+}
+
+.stats-box{
+flex-wrap:wrap;
+}
+
+.stat{
+min-width:45%;
+}
+
+.benefits-box h2{
+font-size:26px;
+}
+
+}
