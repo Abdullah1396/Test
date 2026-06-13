@@ -400,8 +400,8 @@ color:#d1d5db;
 .door-bg{
 background:
 linear-gradient(
-rgba(2,6,23,.25),
-rgba(2,6,23,.35)
+rgba(2,6,23,.15),
+rgba(2,6,23,.25)
 ),
 url("images/card-door.jpg");
 
