@@ -396,3 +396,19 @@ font-size:20px;
 line-height:1.9;
 color:#d1d5db;
 }
+
+.door-bg{
+background:
+linear-gradient(
+rgba(2,6,23,.75),
+rgba(2,6,23,.85)
+),
+url("images/card-door.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+border-radius:32px;
+padding:60px 30px;
+}
